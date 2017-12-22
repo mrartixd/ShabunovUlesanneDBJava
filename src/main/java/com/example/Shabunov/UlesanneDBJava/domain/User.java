@@ -1,27 +1,31 @@
 package com.example.Shabunov.UlesanneDBJava.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+
+
 @Entity
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
     private String firstname;
     private String lastname;
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "user")
     private List<Course> courses;
 
 
-    public Users(){
+    public User(){
 
     }
 
-    public Users(long id, String firstname, String lastname, List<Course> courses ){
+    public User(long id, String firstname, String lastname, List<Course> courses ){
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;

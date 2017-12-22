@@ -18,15 +18,49 @@ public class Course {
     private String title;
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "user_id")
-    private Users user;
+    private User user;
 
     public Course(){
 
     }
 
-    public Course(Long id, String title, Users user) {
+    public Course(Long id, String title, User user) {
         this.id = id;
         this.title = title;
         this.user = user;
+    }
+
+    public Long getID(){
+        return id;
+    }
+
+    public void setID(Long id){
+        this.id = id;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public User getUser(){
+        return user;
+    }
+
+    public void setUsers(User user){
+        this.user = user;
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Course: #");
+        sb.append(id);
+        sb.append(", Title: ");
+        sb.append(title);
+        sb.append(", Users: ");
+        sb.append(user.toString());
+        return sb.toString(); 
     }
 }
