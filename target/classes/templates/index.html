@@ -1,4 +1,4 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th ="http://www.thymeleaf.org">
 <head lang="en">
     <title>Example Courses</title>
@@ -8,7 +8,7 @@
         <h1 class="text-center bg-primary">Courses</h1>
         <p th:each="course : ${courses}">
             <span style="font-weight: bold" th:text="${course.getTitle()}"></span>
-            (<span th:text="${course.getUser().getFirstname()}")></span>
+            (<span th:text="${course.getUser().getFirstname()}"></span>
             <span th:text="${course.getUser().getLastname()}"></span>)
         </p>
     </div>
