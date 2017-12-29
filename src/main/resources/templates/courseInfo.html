@@ -42,26 +42,7 @@
                           </div>
                         </div>
                     <div class="col-sm-8">
-                    <h1>Курсы<span class="badge badge-secondary">2017</span></h1>
-                    <table class="table table-striped">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Название курса</th>
-                                <th scope="col">Участники</th>
-                                <th scope="col">Подробнее</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr th:each="course : ${courses}">
-                                <th scope="row">1</th>
-                                <td th:text="${course.getTitle()}"></td>
-                                <td><span th:text="${course.getUser().getFirstname()}"></span>
-                                    <span th:text="${course.getUser().getLastname()}"></span></td>
-                                <td><a href="#">Подробнее</a></td>
-                              </tr>
-                            </tbody>
-                          </table>
+                    
                 </div>
             </div>
         </div>
