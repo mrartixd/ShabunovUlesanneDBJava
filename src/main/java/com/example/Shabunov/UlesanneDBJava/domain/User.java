@@ -1,59 +1,111 @@
 package com.example.Shabunov.UlesanneDBJava.domain;
 
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-
-
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
+
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
-    private String firstname;
-    private String lastname;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
+
     @OneToMany(mappedBy = "user")
     private List<Course> courses;
 
-
-    public User(){
-
+    public User() {
     }
 
-    public User(long id, String firstname, String lastname, List<Course> courses ){
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public User(String firstName, String lastName, String email, String password, List<Course> courses) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
         this.courses = courses;
     }
 
-    public long getId(){
+    public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id){
+    public void setId(Long id) {
         this.id = id;
     }
-    
-    public String getFirstname(){
-        return firstname;
+
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname){
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname(){
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
-    
-    public void setLastname(String lastname){
-        this.lastname = lastname;
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + "*********" + '\'' +
+                ", roles=" + roles +
+                '}';
     }
 
     public List<Course> getCourse(){

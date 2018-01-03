@@ -1,0 +1,17 @@
+com\example\Shabunov\UlesanneDBJava\constraint\FieldMatch.class
+com\example\Shabunov\UlesanneDBJava\service\UserService.class
+com\example\Shabunov\UlesanneDBJava\domain\User.class
+com\example\Shabunov\UlesanneDBJava\repository\UserRepository.class
+com\example\Shabunov\UlesanneDBJava\UlesanneDbJavaApplication.class
+com\example\Shabunov\UlesanneDBJava\web\MainController.class
+com\example\Shabunov\UlesanneDBJava\controller\HomeController.class
+com\example\Shabunov\UlesanneDBJava\web\dto\UserRegistrationDto.class
+com\example\Shabunov\UlesanneDBJava\domain\Role.class
+com\example\Shabunov\UlesanneDBJava\constraint\FieldMatchValidator.class
+com\example\Shabunov\UlesanneDBJava\service\UserServiceImpl.class
+com\example\Shabunov\UlesanneDBJava\repository\CourseService.class
+com\example\Shabunov\UlesanneDBJava\web\UserRegistrationController.class
+com\example\Shabunov\UlesanneDBJava\domain\Course.class
+com\example\Shabunov\UlesanneDBJava\config\SecurityConfig.class
+com\example\Shabunov\UlesanneDBJava\constraint\FieldMatch$List.class
+com\example\Shabunov\UlesanneDBJava\repository\CourseRepository.class
