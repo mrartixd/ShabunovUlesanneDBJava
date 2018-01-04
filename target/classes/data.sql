@@ -9,6 +9,8 @@ INSERT INTO role (id, name) VALUES (2, 'ROLE_USER');
 
 INSERT INTO users_roles (user_id, role_id) VALUES (1, 1);
 INSERT INTO users_roles (user_id, role_id) VALUES (1, 2);
-INSERT INTO Course(title, user_id) VALUES('Eesti keel',1);
-INSERT INTO Course(title, user_id) VALUES('Eesti keel',2);
-INSERT INTO Course(title, user_id) VALUES('Englise keel',2);
+INSERT INTO Course(id,title, code) VALUES(1,'Eesti keel','RAM9991');
+INSERT INTO Course(id,title, code) VALUES(2,'Englise keel','RAM9992');
+INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(1,1);
+INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(1,2);
+INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(2,3);

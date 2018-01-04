@@ -2,7 +2,7 @@ package com.example.Shabunov.UlesanneDBJava.domain;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "email"))
@@ -26,13 +26,13 @@ public class User {
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
 
-    @OneToMany(mappedBy = "user")
-    private List<Course> courses;
+    @ManyToMany(mappedBy = "user")
+    private Set<Course> courses;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String email, String password, List<Course> courses) {
+    public User(String firstName, String lastName, String email, String password, Set<Course> courses) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -108,11 +108,11 @@ public class User {
                 '}';
     }
 
-    public List<Course> getCourse(){
+    public Set<Course> getCourse(){
         return courses;
     }
 
-    public void setCourse (List<Course> courses){
+    public void setCourse (Set<Course> courses){
         this.courses = courses;
     }
 }
