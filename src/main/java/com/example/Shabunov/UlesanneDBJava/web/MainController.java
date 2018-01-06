@@ -17,7 +17,7 @@ public class MainController {
 
     @Autowired
     private CourseService courseService;
-
+    
     @RequestMapping(value = "/")
     public String getCourses(Model model){
         model.addAttribute("courses", courseService.getAllCourses());
@@ -46,8 +46,19 @@ public class MainController {
         return "newcourse";
     }
 
-    @GetMapping("/regcourse")
-    public String regCourse() {
-        return "newcourse";
+    @RequestMapping(value = "/regcourse")
+    public String regCourse(Model model){
+        model.addAttribute("courses", courseService.getAllCourses());
+        return "regcourse";
+    }
+
+    @GetMapping("/editcourse")
+    public String editCourse() {
+        return "editcourse";
+    }
+
+    @GetMapping("/edituser")
+    public String editUser() {
+        return "edituser";
     }
 }

@@ -4,9 +4,11 @@ com\example\Shabunov\UlesanneDBJava\domain\User.class
 com\example\Shabunov\UlesanneDBJava\repository\UserRepository.class
 com\example\Shabunov\UlesanneDBJava\UlesanneDbJavaApplication.class
 com\example\Shabunov\UlesanneDBJava\web\MainController.class
+com\example\Shabunov\UlesanneDBJava\service\StudentService.class
 com\example\Shabunov\UlesanneDBJava\web\dto\UserRegistrationDto.class
 com\example\Shabunov\UlesanneDBJava\domain\Role.class
 com\example\Shabunov\UlesanneDBJava\constraint\FieldMatchValidator.class
+com\example\Shabunov\UlesanneDBJava\repository\StudentRepository.class
 com\example\Shabunov\UlesanneDBJava\service\UserServiceImpl.class
 com\example\Shabunov\UlesanneDBJava\repository\CourseService.class
 com\example\Shabunov\UlesanneDBJava\web\UserRegistrationController.class

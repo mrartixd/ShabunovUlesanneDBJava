@@ -51,26 +51,30 @@
                             </ul>
                           </div>
                         </div>
-                    <div class="col-sm-8">
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th scope="col" th:text="${course.getTitle()}"></th>
-                            <th scope="col" th:text="${course.getCode()}"></th>
-                            <th scope="col">Участники</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr th:each="student : ${students}">
-                            <th scope="row" th:text="${student.getId()}"></th>
-                            <td ></td>
-                             <td>
-                              <span th:text="${student.getFirstName()}"></span>
-                              <span th:text="${student.getLastName()}"></span></td>
-                          </tr>
-                        </tbody>
-                      </table>
-                </div>
+                        <div class="card">
+                            <div class="card-header" th:text="${course.getCode()}">
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title" th:text="${course.getTitle()}"></h5>
+                              <p class="card-text"></p>
+                              <table class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Участники</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr th:each="student : ${students}">
+                                      <th scope="row" th:text="${student.getId()}"></th>
+                                       <td>
+                                        <span th:text="${student.getFirstName()}"></span>
+                                        <span th:text="${student.getLastName()}"></span></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                          </div>
             </div>
         </div>
 </body>

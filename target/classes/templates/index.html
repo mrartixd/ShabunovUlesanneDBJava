@@ -30,6 +30,8 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                               <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/newcourse}">Добавить курс</a>
+                              <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/editcourse}">Редактировать курс</a>
+                              <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/edituser}">Редактировать пользователя</a>
                               <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/regcourse}">Регистрация на курс</a>
                               <a sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{/logout}">Выход</a>
                             </div>
