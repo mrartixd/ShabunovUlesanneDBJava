@@ -26,7 +26,6 @@
                           </li>
                           <li sec:authorize="isAuthenticated()" class="nav-item dropdown">
                             <a sec:authentication="name" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                               <a sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown-item" th:href="@{/newcourse}">Добавить курс</a>
