@@ -61,7 +61,6 @@
                         <div class="col-sm-6">
                     <form th:action="@{/regcourse}" th:object="${COURSES_USERS}" method="post">
                         <div class="form-group">
-                            <label for="inputState" sec:authentication="id"></label>
                             <label for="inputState">Курс</label>
                             <select id="inputState" class="form-control" required="required">
                               <option select="select">Выберите курс</option>

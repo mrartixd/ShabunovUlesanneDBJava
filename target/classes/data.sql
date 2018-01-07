@@ -9,8 +9,8 @@ INSERT INTO role (id, name) VALUES (2, 'ROLE_USER');
 
 INSERT INTO users_roles (user_id, role_id) VALUES (1, 1);
 INSERT INTO users_roles (user_id, role_id) VALUES (1, 2);
-INSERT INTO Course(id,title, code) VALUES(1,'Eesti keel','RAM9991');
-INSERT INTO Course(id,title, code) VALUES(2,'Englise keel','RAM9992');
+INSERT INTO Course(id,title, code, description) VALUES(1,'Business Administration','RAR0200','Give general knowledge of essential characteristics of economic activity and business planning in conformity with Estonian law and order and business environment.');
+INSERT INTO Course(id,title, code, description) VALUES(2,'Database Systems','RAR0380','To teach database development process, to practise designing/building of the client-server solution which is based on object-orientated and relational database.');
 INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(1,1);
 INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(1,2);
 INSERT INTO COURSES_USERS(courses_id, user_id) VALUES(2,3);

@@ -19,6 +19,9 @@ public class Course {
     @Column(nullable=false)
     private String title;
     private String code;
+    private String description;
+
+    
     
 
 
@@ -31,10 +34,11 @@ public class Course {
 
     }
 
-    public Course(Long id, String title, String code , Set<User> user) {
+    public Course(Long id, String title, String code, String description , Set<User> user) {
         this.id = id;
         this.title = title;
         this.code = code;
+        this.description = description;
         this.user = user;
     }
 
@@ -62,6 +66,14 @@ public class Course {
         this.code = code;
     }
 
+    public String getDesc(){
+        return description;
+    }
+
+    public void setDesc(String description){
+        this.description = description;
+    }
+
     public Set<User> getUser(){
         return user;
     }
@@ -77,6 +89,8 @@ public class Course {
         sb.append(title);
         sb.append(", Code: ");
         sb.append(code);
+        sb.append(", Description: ");
+        sb.append(description);
         sb.append(", Users: ");
         sb.append(user.toString());
         return sb.toString(); 

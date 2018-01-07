@@ -29,5 +29,13 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     @Query("UPDATE Course SET title = :title WHERE id = :id")
     int setNewTitle(@Param("title") String title, @Param("id") long id);
 
-    
+    @Modifying
+    @Query(value="INSERT INTO COURSES_USERS (COURSES_ID,USERS_ID) VALUES (?,?)",nativeQuery = true)
+    @Transactional
+	public void setCourseUser(Long course_id, Long user_id);
+
+    // @Modifying
+    // @Transactional(readOnly= false)
+    // @Query("INSERT INTO Course(id,title , code, description) VALUES(id = :id, title = :title, code= :code, description = :description)")
+    // int setNewCourse(@Param("name") String title, @Param("id") long id, @Param("code") String code, @Param("description") String description);
 }

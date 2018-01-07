@@ -57,7 +57,7 @@
                             </div>
                             <div class="card-body">
                               <h5 class="card-title" th:text="${course.getTitle()}"></h5>
-                              <p class="card-text"></p>
+                              <p class="card-text" th:text="${course.getDesc()}"></p>
                               <table class="table table-striped">
                                   <thead>
                                     <tr>
@@ -74,6 +74,11 @@
                                     </tr>
                                   </tbody>
                                 </table>
+                                <div class="row-fluid" sec:authorize="isAuthenticated()">
+                                    <form  class="form-signin" th:action="@{|/course/${course.getID()}/user/register/${username}|}" th:object="${user}" method="post">
+                                        <button type="submit" class="btn btn-primary">Регистрация на курс</button>
+                                    </form>
+                            </div>    
                             </div>
                           </div>
                           </div>
